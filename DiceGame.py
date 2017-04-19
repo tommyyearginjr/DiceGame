@@ -27,10 +27,11 @@ for integer in range(0,5):
 print('\n')
 
 # Create a way to discard rolls, and to re-roll and display the final results.
-discard = input('Enter which rolls to discard, if any, and press enter. (Numbers only!) ')
+discard = raw_input('Enter which rolls to discard, if any, and press enter. Numbers only; no spaces or punctuation!! ("123", e.g.) ')
 discardList = list()
-for i in str(discard):
+for i in discard:
     discardList.append(i)
+print(discardList)
 os.system('clear')
 for i in discardList:
     i = int(i)
