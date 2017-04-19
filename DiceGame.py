@@ -1,5 +1,8 @@
 import random
 import sys
+import os
+
+os.system('clear')
 
 die01 = list()
 hand = list()
@@ -18,8 +21,26 @@ sys.stdout.write('RESULTS\t\t')
 for outcome in hand:
     sys.stdout.write(str(outcome) + '\t')
 print('\n')
-
-sys.stdout.write('HOLD?\t\t')
+sys.stdout.write('DISCARD?\t')
 for integer in range(0,5):
     sys.stdout.write(str(integer + 1) + '\t')
+print('\n')
+
+discard = input('Enter which rolls to discard, if any, and press enter. (Numbers only!) ')
+
+discardList = list()
+
+for i in str(discard):
+    discardList.append(i)
+
+os.system('clear')
+
+for i in discardList:
+    i = int(i)
+    i = i - 1
+    hand[i] = random.choice(die01)
+
+sys.stdout.write('FINAL RESULTS\t\t')
+for outcome in hand:
+    sys.stdout.write(str(outcome) + '\t')
 print('\n')
